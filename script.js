@@ -7,6 +7,7 @@ object.container=document.querySelector(".container");
 
 
 function check(){
+    if(Number(object.input.value)<100 && Number(object.input.value)>=0){
     if(Number(object.input.value)===randomNumber){
       object.container.innerHTML="<h2 class='right'>Правильно</h2>"
     }
@@ -18,8 +19,11 @@ function check(){
         alert("Наше число больше,подумайте еще");
         object.input.value="";
     }
-    console.log(randomNumber);
+}
+else {alert("Вы ввели большое число");
+object.input.value="";
 
+}
 }
 
 object.button.addEventListener("click",check)
